@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -89,8 +91,9 @@ System.out.println("Задача 7");
     System.out.println("При потере в весе 250г в день на похудение потребуется " + weightLossDays250G + " дней.");
     int weightLossDays500G = needToLoseWeightGramm/weightLossPerDaySecondOption;
     System.out.println("При потере в весе 500г в день на похудение потребуется " + weightLossDays500G + " дней.");
-    int theAverageAmountOfTimeSpent = (weightLossDays250G + weightLossDays500G)/2;
-    System.out.println("В среднем, чтобы похудеть на 7 кг потребуется " + theAverageAmountOfTimeSpent + " день.");
+    double lossWeightPerDayAverage = (weightLossPerDayFirstOption + weightLossPerDaySecondOption)/2D;
+    double theAverageAmountOfTimeSpent = (double) needToLoseWeightGramm/lossWeightPerDayAverage;
+    System.out.printf(Locale.US,"В среднем, чтобы похудеть на 7 кг потребуется %.2f" + " дней.%n", theAverageAmountOfTimeSpent);
 
 System.out.println("Задача 8");
     int MashaSalary = 67760;
